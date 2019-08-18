@@ -33,7 +33,7 @@ const fetchEvents = [
 
     },
     {
-        uuid: '81ddfb3f-46c7-442c-83e6-ee946cfa4366',
+        uuid: 'da9b8207-0123-42d4-85a2-9e10068bdac5',
         title: 'Sanctum Sanctorum',
         images: [Image, Image, Image],
         venue: {
@@ -62,7 +62,7 @@ const fetchEvents = [
 
     },
     {
-        uuid: '81ddfb3f-46c7-442c-83e6-ee946cfa4366',
+        uuid: 'bc5b5ce6-3709-4c4f-86b4-132847ff6a89',
         title: 'Sanctum Sanctorum',
         images: [Image, Image, Image],
         venue: {
@@ -91,7 +91,7 @@ const fetchEvents = [
 
     },
     {
-        uuid: '81ddfb3f-46c7-442c-83e6-ee946cfa4366',
+        uuid: '3b990420-006f-42f9-b2b3-d527efcb1967',
         title: 'Sanctum Sanctorum',
         images: [Image, Image, Image],
         venue: {

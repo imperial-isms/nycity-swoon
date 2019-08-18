@@ -13,6 +13,7 @@ class Events extends Component {
                         
                         return (
                             <EventCard 
+                                key={eventObj.uuid}
                                 img={eventObj.images[0]} 
                                 title={eventObj.title} 
                                 street={eventObj.venue.address.street} 
@@ -20,7 +21,13 @@ class Events extends Component {
                                 state={eventObj.venue.address.state} 
                                 zipcode={eventObj.venue.address.zipcode} 
                                 date={eventObj.date} 
-                                timeStart={eventObj.timeStart}
+                                timeStart={eventObj.timeStart}                                
+                                venueCapacity={{
+                                    availableTwoTops: eventObj.venue.availableTwoTops,
+                                    maxOccupancy: eventObj.venue.maxOccupancy,
+                                    barSeating: eventObj.venue.barSeating,
+                                }}
+                                registrations={eventObj.attendees}
                             />
                         )
                     })
