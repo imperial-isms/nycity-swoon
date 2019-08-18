@@ -15,7 +15,7 @@ const fetchEvents = [
                 state: 'NY',
                 zipcode: '10012'
             },
-            maxOccupacy: 100,
+            maxOccupancy: 100,
             availableTwoTops: 20,
             barSeating: 30,
         },
@@ -44,7 +44,7 @@ const fetchEvents = [
                 state: 'NY',
                 zipcode: '10012'
             },
-            maxOccupacy: 100,
+            maxOccupancy: 100,
             availableTwoTops: 20,
             barSeating: 30,
         },
@@ -73,7 +73,7 @@ const fetchEvents = [
                 state: 'NY',
                 zipcode: '10012'
             },
-            maxOccupacy: 100,
+            maxOccupancy: 100,
             availableTwoTops: 20,
             barSeating: 30,
         },
@@ -102,7 +102,7 @@ const fetchEvents = [
                 state: 'NY',
                 zipcode: '10012'
             },
-            maxOccupacy: 100,
+            maxOccupancy: 100,
             availableTwoTops: 20,
             barSeating: 30,
         },
