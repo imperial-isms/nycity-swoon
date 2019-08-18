@@ -12,10 +12,8 @@ class Content extends Component {
 
 const styles={
     container: {
-        boxSizing: 'border-box',
-        width: '100%', height: '100%',
+        height: '100%',
         padding: 18,
-
     }
 }
 

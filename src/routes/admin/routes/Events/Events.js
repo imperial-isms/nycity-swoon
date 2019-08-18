@@ -6,7 +6,7 @@ class Events extends Component {
     render() {
         const { events } = this.props;
         return (
-            <Content style={{...styles.container}}>                
+            <Content>
                 <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
                 {
                     events.map( (eventObj) => {
@@ -39,12 +39,5 @@ class Events extends Component {
     }
 }
 
-const styles={
-    container: {
-        boxSizing: 'border-box',
-        display: 'flex', flexDirection: 'column',
-        width: '100%', height: '100%',
-    }
-}
 
 export default Events;

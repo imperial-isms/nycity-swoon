@@ -12,12 +12,12 @@ class Card extends Component {
 
 const styles={
     container: {
-        overflow: 'hidden',
         boxShadow: '1.5px 1.5px 6px rgba(0, 0, 0, 0.25)',
         borderRadius: '3px',
         backgroundColor: '#fff',
 
         display: 'flex', flexDirection: 'column',        
+        overflow: 'hidden',
     }
 }
 

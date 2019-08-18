@@ -7,8 +7,8 @@ class EventCard extends Component {
         const { img, title, street, city, state, zipcode, date, timeStart, registrations, venueCapacity } = this.props;
         return (
             <Card style={{margin: 15}}>
-                <div>
-                    <img src={img} alt={title}/>
+                <div style={{width: '100%', boxSizing: 'border-box'}}>
+                    <img style={{width: '100%'}} src={img} alt={title}/>
                 </div>
                 <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', padding: 15}}>
                     <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '30px'}}>
@@ -39,7 +39,8 @@ class EventCard extends Component {
 }
 const styles={
     imageContainer: {
-        width: '100%', height: '24%',
+        display: 'flex',
+        width: 'inherit',
     },
     title: {
         display: 'flex',

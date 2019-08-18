@@ -4,7 +4,7 @@ import AdminContainer from './routes/admin'
 
 function App() {
   return (
-    <div className="App" style={{display: 'flex', width: '100%', minHeight: '100vh'}}>
+    <div className="App" style={{display: 'flex', minHeight: '100vh'}}>
       <AdminContainer/>
     </div>
   );
