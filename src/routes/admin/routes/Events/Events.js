@@ -13,7 +13,7 @@ class Events extends Component {
                         
                         return (
                             <EventCard 
-                                key={eventObj.uuid}
+                                key={eventObj.id}
                                 img={eventObj.images[0]} 
                                 title={eventObj.title} 
                                 street={eventObj.venue.address.street} 
