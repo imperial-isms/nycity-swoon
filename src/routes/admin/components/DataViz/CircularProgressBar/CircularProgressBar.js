@@ -16,7 +16,6 @@ export default class CircularProgressBar extends Component {
     // Scale 100% coverage overlay with the actual percent
     const dashOffset = dashArray - (dashArray * (progress > possible ? possible : progress) / possible ); 
 
-	console.log(this.props)
     return (
 	  <div 
 	  	style={{
