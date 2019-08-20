@@ -26,7 +26,8 @@ const styles={
         left: 0, right: 0,     
         backgroundImage: `url('${Bokeh}')`,
         backgroundSize: 'cover',
-        minWidth: '100vw', minHeight: '100vh',
+        minHeight: '100vh',
+        padding: 18,
     },
 
     button: {
