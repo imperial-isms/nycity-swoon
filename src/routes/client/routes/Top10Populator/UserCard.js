@@ -10,6 +10,7 @@ class UserCard extends Component {
                 style={{
                     height: '75vh',
                     margin: 18,
+                    userSelect: 'none',
                     ...this.props.style
                     }}>
                 <div style={{ flex: 2 }}>
