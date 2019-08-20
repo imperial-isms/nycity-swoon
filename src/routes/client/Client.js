@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import Top10Populator from './routes/Top10Populator/';
 import Top10Sorter from './routes/Top10Sorter/';
 
@@ -12,7 +13,7 @@ import Steven from '../../assets/images/attendees/image-1.png'
 
 const fetchEventAttendees = [
     {
-        id: 'j3lakwj3jf',
+        id: 'j3lafdkwj3jf',
         firstName: 'Aarav',
         lastName: ' Shankar',
         images: [Aarav],
@@ -22,7 +23,7 @@ const fetchEventAttendees = [
         about: 'Journalism might be my ikigai, but I’ll never turn down a proper bahn mi sandwich...pass the sriracha!'
     },
     {
-        id: 'j3lakwj3jf',
+        id: 'j3lvzxcvakwj3jf',
         firstName: 'Jason',
         lastName: ' Drake',
         images: [Jason],
@@ -32,7 +33,7 @@ const fetchEventAttendees = [
         about: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
     },
     {
-        id: 'j3lakwj3jf',
+        id: 'j3lakwvzfvj3jf',
         firstName: 'Chris',
         lastName: ' Smith',
         images: [Chris],
@@ -42,7 +43,7 @@ const fetchEventAttendees = [
         about: 'Orci nulla pellentesque dignissim enim sit amet venenatis. Elementum integer enim neque volutpat ac. '
     },
     {
-        id: 'j3lakwj3jf',
+        id: 'j3lakwjnbcvn3jf',
         firstName: 'Antoni',
         lastName: ' Nowak',
         images: [Antoni],
@@ -52,7 +53,7 @@ const fetchEventAttendees = [
         about: 'Tempor orci dapibus ultrices in iaculis nunc sed augue. Eget felis eget nunc lobortis mattis aliquam. '
     },
     {
-        id: 'j3lakwj3jf',
+        id: 'fffacvbnsdf',
         firstName: 'Mark',
         lastName: ' Sousa',
         images: [Mark],
@@ -62,7 +63,67 @@ const fetchEventAttendees = [
         about: 'Sed vulputate odio ut enim blandit volutpat maecenas volutpat. '
     },
     {
-        id: 'j3lakwj3jf',
+        id: 'xcxcbdxfg',
+        firstName: 'Steven',
+        lastName: ' Madison',
+        images: [Steven],
+        age: 26,
+        location: 'Carroll, Brooklyn',
+        headline: ` Auctor eu augue ut lectus.`,
+        about: 'Ullamcorper malesuada proin libero nunc consequat interdum varius sit.'
+    },
+    {
+        id: 'j3lafdkwj3jf',
+        firstName: 'Aarav',
+        lastName: ' Shankar',
+        images: [Aarav],
+        age: 26,
+        location: 'Prospect Heights, Brooklyn',
+        headline: `Don't lose focus.`,
+        about: 'Journalism might be my ikigai, but I’ll never turn down a proper bahn mi sandwich...pass the sriracha!'
+    },
+    {
+        id: 'j3lvzxcvakwj3jf',
+        firstName: 'Jason',
+        lastName: ' Drake',
+        images: [Jason],
+        age: 26,
+        location: 'SoHo, Manhattan',
+        headline: `Just keep swimming.`,
+        about: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    },
+    {
+        id: 'j3lakwvzfvj3jf',
+        firstName: 'Chris',
+        lastName: ' Smith',
+        images: [Chris],
+        age: 31,
+        location: 'Prospect Heights, Brooklyn',
+        headline: `Volutpat blandit.`,
+        about: 'Orci nulla pellentesque dignissim enim sit amet venenatis. Elementum integer enim neque volutpat ac. '
+    },
+    {
+        id: 'j3lakwjnbcvn3jf',
+        firstName: 'Antoni',
+        lastName: ' Nowak',
+        images: [Antoni],
+        age: 23,
+        location: 'Greenpoint, Brooklyn',
+        headline: `Morbi non arcu risus quis.`,
+        about: 'Tempor orci dapibus ultrices in iaculis nunc sed augue. Eget felis eget nunc lobortis mattis aliquam. '
+    },
+    {
+        id: 'fffacvbnsdf',
+        firstName: 'Mark',
+        lastName: ' Sousa',
+        images: [Mark],
+        age: 26,
+        location: 'Hoboken, New Jersey',
+        headline: `Ultrices in iaculis nunc sed`,
+        about: 'Sed vulputate odio ut enim blandit volutpat maecenas volutpat. '
+    },
+    {
+        id: 'xcxcbdxfg',
         firstName: 'Steven',
         lastName: ' Madison',
         images: [Steven],
@@ -93,12 +154,9 @@ class Client extends Component {
             this.setState({
                 top10List,
             })
+            console.log(top10List)
         }
         
-    }
-
-    sortTop10 = (top10List) => {
-        console.log(top10List)
     }
         
     remove = () => {        
@@ -110,21 +168,24 @@ class Client extends Component {
     render() {
         const { currentList, top10List } = this.state;
         return (
-            <div style={{...styles.container}}>
-                {console.log(currentList.length)}
-                {
-                    currentList.length === 0 ? 
-                    <Top10Sorter 
-                        top10List={top10List}
-                        sortTop10={this.sortTop10}
-                    />
-                    :   <Top10Populator 
-                            remove={this.remove} addToTop10={this.addToTop10} 
-                            top10Count={top10List.length} 
-                            currentList={currentList}
-                    />
-                }
-            </div>
+
+                <div style={{...styles.container}}>
+                    {console.log(currentList.length)}
+                    {
+                        top10List === 10 || currentList.length === 0 ? 
+                        // true ?
+                        <Top10Sorter 
+                            top10List={top10List}
+                            sortTop10={this.sortTop10}
+                        />
+                        :   <Top10Populator 
+                                remove={this.remove} addToTop10={this.addToTop10} 
+                                top10Count={top10List.length} 
+                                currentList={currentList}
+                        />
+                    }
+                </div>
+                
         );
     }
 
