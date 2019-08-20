@@ -14,7 +14,7 @@ class UserCardWide extends Component {
                     marginBottom: 18,
                     ...this.props.style
                     }}>
-                <div style={{ flex: 1 }}>
+                <div style={{ flex: 1, display: 'flex', flexDirection: 'column',  }}>
                     <img draggable="false" style={{width: '100%'}} src={`${images[0]}`} alt='user'/>
                 </div>
                 <div style={{ flex: 2, padding: 18, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }}>
