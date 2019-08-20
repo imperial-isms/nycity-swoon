@@ -97,6 +97,9 @@ class Client extends Component {
         
     }
 
+    sortTop10 = (top10List) => {
+        console.log(top10List)
+    }
         
     remove = () => {        
         this.setState({
@@ -113,6 +116,7 @@ class Client extends Component {
                     currentList.length === 0 ? 
                     <Top10Sorter 
                         top10List={top10List}
+                        sortTop10={this.sortTop10}
                     />
                     :   <Top10Populator 
                             remove={this.remove} addToTop10={this.addToTop10} 

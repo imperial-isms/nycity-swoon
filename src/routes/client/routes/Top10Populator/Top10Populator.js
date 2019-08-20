@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Swipeable from "react-swipy";
-import UserCard from './UserCard';
+import UserCardTall from './UserCardTall';
 
 
 class Top10Populator extends Component {
@@ -13,7 +13,7 @@ class Top10Populator extends Component {
         
         currentList.map(attendee => {            
             return htmlCards.push(        
-              <UserCard 
+              <UserCardTall 
                 key={attendee["id"]}
                 firstName={attendee["firstName"]}
                 lastName={attendee["lastName"]}
@@ -48,7 +48,7 @@ class Top10Populator extends Component {
                             {htmlCards[0] ? htmlCards[0] : null}
                         </Swipeable>
                         {currentList.length !== 1 ? 
-                            <UserCard 
+                            <UserCardTall 
                                 key={currentList[1]["id"]}
                                 firstName={currentList[1]["firstName"]}
                                 lastName={currentList[1]["lastName"]}
@@ -59,7 +59,6 @@ class Top10Populator extends Component {
                                 about={currentList[1]['about']}
                                 style={{
                                     position: 'absolute',
-                                    width: '80%',
                                     top: 0, bottom: 0,
                                     left: 0, right: 0,
                                     margin: 'auto', zIndex: -1
@@ -80,14 +79,13 @@ class Top10Populator extends Component {
 
 const styles = {
     container: {
-        backgroundColor: 'rgba(0,255,0,.2)',
         width: 375, height: 812,
         position: 'fixed', 
         top: 0, bottom: 0,
         left: 0, right: 0,
         margin: 'auto',
         display: 'flex', flexDirection: 'column',
-        justifyContent: 'center',        
+        justifyContent: 'center', alignItems: 'center',
     }
 }
 
