@@ -6,17 +6,32 @@ class Client extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            currentRoute: ''
+            currentRoute: '',
+            top10List: [],
         }
+    }
+
+    addToTop10 = (direction, person) => {
+        console.log(direction, person)
+        let top10List = this.state.top10List;
+        if (direction === 'right') {
+            top10List.push(person)
+            this.setState({
+                top10List,
+            })
+        }
+        console.log(this.state.top10List)
     }
 
     render() {
         return (
             <div style={{...styles.container}}>
-                <Top10Populator/>
+                <Top10Populator addToTop10={this.addToTop10}/>
             </div>
         );
     }
+
+
 }
 
 const styles={
