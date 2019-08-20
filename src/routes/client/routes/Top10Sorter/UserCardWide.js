@@ -8,6 +8,7 @@ class UserCardWide extends Component {
         return (
             <Card 
                 style={{
+                    minHeight: '120px',
                     userSelect: 'none',
                     flexDirection: 'row',
                     marginBottom: 18,

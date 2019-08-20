@@ -38,6 +38,7 @@ const styles = {
         margin: 'auto',
         display: 'flex', flexDirection: 'column',
         justifyContent: 'flex-',
+        overflowY: 'scroll',
     }
 }
 
