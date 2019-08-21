@@ -6,8 +6,8 @@ import Top10Sorter from './routes/Top10Sorter/';
 import Bokeh from '../../assets/images/boke.png'
 import Aarav from '../../assets/images/attendees/image-6.png'
 import Jason from '../../assets/images/attendees/image-5.png'
-import Chris from '../../assets/images/attendees/image-4.png'
-import Antoni from '../../assets/images/attendees/image-3.png'
+import Antoni from '../../assets/images/attendees/image-4.png'
+import Chris from '../../assets/images/attendees/image-3.png'
 import Mark from '../../assets/images/attendees/image-2.png'
 import Steven from '../../assets/images/attendees/image-1.png'
 
