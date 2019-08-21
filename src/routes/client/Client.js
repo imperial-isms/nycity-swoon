@@ -167,12 +167,13 @@ class Client extends Component {
 
     render() {
         const { currentList, top10List } = this.state;
+        const spotsLeft = 10 - top10List.length;
         return (
 
                 <div style={{...styles.container}}>
                     {console.log(currentList.length)}
                     {
-                        top10List === 10 || currentList.length === 0 ? 
+                        top10List.length === 10 || currentList.length === 0 ? 
                         // true ?
                         <Top10Sorter 
                             top10List={top10List}
@@ -180,7 +181,7 @@ class Client extends Component {
                         />
                         :   <Top10Populator 
                                 remove={this.remove} addToTop10={this.addToTop10} 
-                                top10Count={top10List.length} 
+                                spotsLeft={spotsLeft}
                                 currentList={currentList}
                         />
                     }
