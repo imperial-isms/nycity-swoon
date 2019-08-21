@@ -141,7 +141,7 @@ class Client extends Component {
         this.state = {
             currentList: fetchEventAttendees,
             currentRoute: '',
-            top10List: [...fetchEventAttendees],
+            top10List: [],
         }
     
     }
@@ -173,8 +173,8 @@ class Client extends Component {
                 <div style={{...styles.container}}>
                     {console.log(currentList.length)}
                     {
-                        // top10List.length === 10 || currentList.length === 0 ? 
-                        true ?
+                        top10List.length === 10 || currentList.length === 0 ? 
+                        // true ?
                         <Top10Sorter 
                             top10List={top10List}
                             sortTop10={this.sortTop10}
