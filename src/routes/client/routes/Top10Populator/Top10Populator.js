@@ -33,7 +33,7 @@ class Top10Populator extends Component {
         <div style={styles.container}>
                     <div style={styles.footerContainer}>
                         <p style={styles.footerText}>
-                            {spotsLeft} spot remaining in your Top 10
+                            {spotsLeft} spot{spotsLeft > 1 ? 's':null} remaining in your Top 10
                         </p>
                     </div>
                 {htmlCards.length !== 0 ? (                        
