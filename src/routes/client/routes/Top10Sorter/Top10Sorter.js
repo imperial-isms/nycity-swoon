@@ -57,7 +57,11 @@ class Top10Sorter extends Component {
                                                         age={attendee["age"]}
                                                         location={attendee["location"]}
                                                         headline={attendee['headline']}
-                                                        about={attendee['about']}                
+                                                        about={attendee['about']}
+                                                        style={{
+                                                            transform: snapshot.isDragging ? 'rotate(-3deg)' : null,
+                                                            boxShadow: snapshot.isDragging ? '1.5px 1.5px 12px rgba(0, 0, 0, 0.25)' : '1.5px 1.5px 6px rgba(0, 0, 0, 0.25)'
+                                                        }}
                                                     />
 
                                                 </div>

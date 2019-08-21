@@ -7,7 +7,7 @@ class Top10Populator extends Component {
 
     render() {        
         
-        const { top10Count, currentList, addToTop10, remove } = this.props;
+        const { spotsLeft, currentList, addToTop10, remove } = this.props;
         const htmlCards = [];
         if ( !currentList ) {return}
         
@@ -31,8 +31,13 @@ class Top10Populator extends Component {
         return (                    
         
         <div style={styles.container}>
+                    <div style={styles.footerContainer}>
+                        <p style={styles.footerText}>
+                            {spotsLeft} spot remaining in your Top 10
+                        </p>
+                    </div>
                 {htmlCards.length !== 0 ? (                        
-                    <div>                                                                                    
+                    <div>                        
                         <Swipeable                                 
                             onSwipe={(direction) => addToTop10(direction, currentList[0])}
                             onAfterSwipe={ remove }
@@ -86,6 +91,18 @@ const styles = {
         margin: 'auto',
         display: 'flex', flexDirection: 'column',
         justifyContent: 'center', alignItems: 'center',
+    },
+    footerContainer: {
+        position: 'fixed', bottom: 0, zIndex: 1,
+        width: 375, backgroundColor: 'rgba(255,255,255, .12)',         
+        display: 'flex', justifyContent: 'center', alignItems: 'center', 
+        padding: '12px 0px', 
+        borderRadius: '3px',
+        border: '1px solid rgba(0, 0, 0, 0.12)', 
+    },
+    footerText: {
+        fontSize: '15px', fontWeight: 'bold', 
+        color: '#fff',
     }
 }
 
