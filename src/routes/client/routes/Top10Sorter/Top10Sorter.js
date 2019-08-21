@@ -10,14 +10,19 @@ class Top10Sorter extends Component {
         }
     }
     onDragEnd = (dragResult) => {
+        console.log(dragResult)
+        if (dragResult.destination === null) { return }
+
         const top10List = this.props.top10List;
-        const { source, destination, draggableId} = dragResult;
+        const { source, destination } = dragResult;
+
         top10List.splice(destination.index,0,top10List.splice(source.index,1)[0])
+
 
     }
 
     render() {                
-        const { top10List, sortTop10 } = this.props;
+        const { top10List } = this.props;
         return (
             
             <DragDropContext
@@ -29,7 +34,7 @@ class Top10Sorter extends Component {
                             Top 10
                         </p>
                     </div>
-                <Droppable droppableId="droppable-1" type="attendee">
+                <Droppable droppableId="attendeePool" type="attendee">
                     {(provided, snapshot) => (
                         <div
                             ref={provided.innerRef}

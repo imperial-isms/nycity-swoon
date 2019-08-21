@@ -3,7 +3,7 @@ import Card from '../../../admin/components/Card';
 
 class UserCardWide extends Component {
     render() {
-        const {firstName, lastName, images, age, location, headline, about} = this.props;
+        const {firstName, lastName, images, age, location} = this.props;
         
         return (
             <Card 
