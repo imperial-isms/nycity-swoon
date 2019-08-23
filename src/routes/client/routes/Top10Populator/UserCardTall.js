@@ -8,7 +8,8 @@ class UserCardTall extends Component {
         return (
             <Card 
                 style={{
-                    width: 300, height: 555,
+                    boxSizing: 'content-box',
+                    width: 240, height: '100%',
                     margin: 18,
                     userSelect: 'none',
                     ...this.props.style
@@ -20,9 +21,10 @@ class UserCardTall extends Component {
                     <p style={{fontSize: '18px', fontWeight: 'bold', color: 'rgba(61, 61, 61, 0.99)', }} >{firstName} {lastName}, {age}</p>
                     <p style={{fontSize: '12px', fontWeight: 'regular', color: 'rgba(61, 61, 61, 0.99)', }} >{location}</p>
                     <p style={{fontSize: '15px', fontWeight: 'regular', color: 'rgba(61, 61, 61, 0.66)', fontStyle: 'italic', textAlign: 'center',  margin: '15px 0px',}} >"{headline}"</p>
-                    <p style={{fontSize: '15px', fontWeight: 'bold', color: 'rgba(61, 61, 61, 0.99)', textDecoration: 'underline' }} >I'm About:</p>
-                    <p style={{fontSize: '15px', fontWeight: 'regular', color: 'rgba(61, 61, 61, 0.66)', }} >{about}</p>
-
+                    <div style={{display: window.innerWidth > 320 ? 'inherit' : 'none'}}>
+                        <p style={{fontSize: '15px', fontWeight: 'bold', color: 'rgba(61, 61, 61, 0.99)', textDecoration: 'underline' }} >I'm About:</p>
+                        <p style={{fontSize: '15px', fontWeight: 'regular', color: 'rgba(61, 61, 61, 0.66)', }} >{about}</p>
+                    </div>
                 </div>
             </Card>
         );
