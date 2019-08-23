@@ -10,7 +10,6 @@ class Top10Sorter extends Component {
         }
     }
     onDragEnd = (dragResult) => {
-        console.log(dragResult)
         if (dragResult.destination === null) { return }
 
         const top10List = this.props.top10List;
