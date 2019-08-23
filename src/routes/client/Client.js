@@ -176,6 +176,14 @@ class Client extends Component {
     
     }
 
+    reOrderList = (dragResult) => {
+        if (dragResult.destination === null) { return }        
+        const { source, destination } = dragResult;
+        const top10List = this.state.top10List;
+        top10List.splice(destination.index,0,top10List.splice(source.index,1)[0])
+        this.setState({top10List})
+    }
+
     addToTop10 = (direction, person) => {
         let top10List = this.state.top10List;
         if (direction === 'right') {
@@ -219,6 +227,8 @@ class Client extends Component {
                         <Top10Sorter 
                             top10List={top10List}
                             sortTop10={this.sortTop10}
+                            reOrderList={this.reOrderList}
+
                         />
                         :   <Top10Populator 
                                 moveToBottomOfDeck={this.moveToBottomOfDeck} addToTop10={this.addToTop10} 

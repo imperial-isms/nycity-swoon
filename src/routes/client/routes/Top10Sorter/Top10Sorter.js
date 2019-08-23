@@ -6,26 +6,17 @@ class Top10Sorter extends Component {
     constructor(props) {
         super(props)
         this.state= {
-            top10: []
+
         }
     }
-    onDragEnd = (dragResult) => {
-        if (dragResult.destination === null) { return }
 
-        const top10List = this.props.top10List;
-        const { source, destination } = dragResult;
-
-        top10List.splice(destination.index,0,top10List.splice(source.index,1)[0])
-
-
-    }
 
     render() {                
-        const { top10List } = this.props;
+        const { top10List, reOrderList } = this.props;
         return (
             
             <DragDropContext
-                onDragEnd={this.onDragEnd}
+                onDragEnd={reOrderList}
             >
                 <div style={styles.container}>
                     <div style={{...styles.headerContainer}}>
