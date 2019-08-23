@@ -71,67 +71,7 @@ const fetchEventAttendees = [
         location: 'Carroll, Brooklyn',
         headline: ` Auctor eu augue ut lectus.`,
         about: 'Ullamcorper malesuada proin libero nunc consequat interdum varius sit.'
-    },
-    {
-        id: 'j3lafdkwj3jf',
-        firstName: 'Aarav',
-        lastName: ' Shankar',
-        images: [Aarav],
-        age: 26,
-        location: 'Prospect Heights, Brooklyn',
-        headline: `Don't lose focus.`,
-        about: 'Journalism might be my ikigai, but I’ll never turn down a proper bahn mi sandwich...pass the sriracha!'
-    },
-    {
-        id: 'j3lvzxcvakwj3jf',
-        firstName: 'Jason',
-        lastName: ' Drake',
-        images: [Jason],
-        age: 26,
-        location: 'SoHo, Manhattan',
-        headline: `Just keep swimming.`,
-        about: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    },
-    {
-        id: 'j3lakwvzfvj3jf',
-        firstName: 'Chris',
-        lastName: ' Smith',
-        images: [Chris],
-        age: 31,
-        location: 'Prospect Heights, Brooklyn',
-        headline: `Volutpat blandit.`,
-        about: 'Orci nulla pellentesque dignissim enim sit amet venenatis. Elementum integer enim neque volutpat ac. '
-    },
-    {
-        id: 'j3lakwjnbcvn3jf',
-        firstName: 'Antoni',
-        lastName: ' Nowak',
-        images: [Antoni],
-        age: 23,
-        location: 'Greenpoint, Brooklyn',
-        headline: `Morbi non arcu risus quis.`,
-        about: 'Tempor orci dapibus ultrices in iaculis nunc sed augue. Eget felis eget nunc lobortis mattis aliquam. '
-    },
-    {
-        id: 'fffacvbnsdf',
-        firstName: 'Mark',
-        lastName: ' Sousa',
-        images: [Mark],
-        age: 26,
-        location: 'Hoboken, New Jersey',
-        headline: `Ultrices in iaculis nunc sed`,
-        about: 'Sed vulputate odio ut enim blandit volutpat maecenas volutpat. '
-    },
-    {
-        id: 'xcxcbdxfg',
-        firstName: 'Steven',
-        lastName: ' Madison',
-        images: [Steven],
-        age: 26,
-        location: 'Carroll, Brooklyn',
-        headline: ` Auctor eu augue ut lectus.`,
-        about: 'Ullamcorper malesuada proin libero nunc consequat interdum varius sit.'
-    },
+    },    
 ]
 
 
@@ -154,22 +94,33 @@ class Client extends Component {
             this.setState({
                 top10List,
             })
-            // console.log(top10List)
+            return this.remove()
         }
+
+        this.moveToBottomOfDeck();
         
     }
         
     remove = () => {        
         this.setState({
-            currentList: this.state.currentList.slice(1, this.state.currentList.length),
+            currentList: this.state.currentList.slice(1,this.state.currentList.length),
         })
     };
+
+    moveToBottomOfDeck = () => {
+        const currentCard = this.state.currentList[0];        
+        const moveToBottomOfDeck = [...this.state.currentList];
+        moveToBottomOfDeck.push(currentCard)
+        moveToBottomOfDeck.shift()
+        this.setState({
+            currentList: moveToBottomOfDeck,
+        })
+    }
 
     render() {
         const { currentList, top10List } = this.state;
         const spotsLeft = 10 - top10List.length;
         return (
-
                 <div style={{...styles.container}}>
                     {console.log(currentList.length)}
                     {
@@ -180,7 +131,7 @@ class Client extends Component {
                             sortTop10={this.sortTop10}
                         />
                         :   <Top10Populator 
-                                remove={this.remove} addToTop10={this.addToTop10} 
+                                moveToBottomOfDeck={this.moveToBottomOfDeck} addToTop10={this.addToTop10} 
                                 spotsLeft={spotsLeft}
                                 currentList={currentList}
                         />

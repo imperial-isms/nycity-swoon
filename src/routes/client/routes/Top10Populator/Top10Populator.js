@@ -7,7 +7,7 @@ class Top10Populator extends Component {
 
     render() {        
         
-        const { spotsLeft, currentList, addToTop10, remove } = this.props;
+        const { spotsLeft, currentList, addToTop10 } = this.props;
         const htmlCards = [];
         if ( !currentList ) {return}
         
@@ -40,7 +40,6 @@ class Top10Populator extends Component {
                     <div>                        
                         <Swipeable                                 
                             onSwipe={(direction) => addToTop10(direction, currentList[0])}
-                            onAfterSwipe={ remove }
                             buttons={
                                 ({left, right}) => (
                                     <div style={{}}>
