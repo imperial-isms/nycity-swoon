@@ -146,7 +146,7 @@ class Client extends Component {
     
     }
 
-    addToTop10 = (direction, person) => {        
+    addToTop10 = (direction, person) => {
         let top10List = this.state.top10List;
         if (direction === 'right') {
             top10List.push(person)
@@ -154,7 +154,7 @@ class Client extends Component {
             this.setState({
                 top10List,
             })
-            console.log(top10List)
+            // console.log(top10List)
         }
         
     }
