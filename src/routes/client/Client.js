@@ -4,6 +4,15 @@ import Top10Populator from './routes/Top10Populator/';
 import Top10Sorter from './routes/Top10Sorter/';
 
 import Bokeh from '../../assets/images/boke.png'
+
+import Male14 from '../../assets/images/attendees/image-14.png'
+import Male13 from '../../assets/images/attendees/image-13.png'
+import Male12 from '../../assets/images/attendees/image-12.png'
+import Male11 from '../../assets/images/attendees/image-11.png'
+import Male10 from '../../assets/images/attendees/image-10.png'
+import Male9 from '../../assets/images/attendees/image-9.png'
+import Male8 from '../../assets/images/attendees/image-8.png'
+import Male7 from '../../assets/images/attendees/image-7.png'
 import Aarav from '../../assets/images/attendees/image-6.png'
 import Jason from '../../assets/images/attendees/image-5.png'
 import Antoni from '../../assets/images/attendees/image-4.png'
@@ -71,7 +80,88 @@ const fetchEventAttendees = [
         location: 'Carroll, Brooklyn',
         headline: ` Auctor eu augue ut lectus.`,
         about: 'Ullamcorper malesuada proin libero nunc consequat interdum varius sit.'
-    },    
+    },
+    {
+        id: 'feaewf',
+        firstName: 'Gary',
+        lastName: 'Clark',
+        images: [Male7],
+        age: 26,
+        location: 'Carroll, Brooklyn',
+        headline: ` Auctor eu augue ut lectus.`,
+        about: 'Ullamcorper malesuada proin libero nunc consequat interdum varius sit.'
+    },
+    {
+        id: 'awefwaef',
+        firstName: 'John',
+        lastName: 'Darling',
+        images: [Male8],
+        age: 26,
+        location: 'Carroll, Brooklyn',
+        headline: ` Auctor eu augue ut lectus.`,
+        about: 'Ullamcorper malesuada proin libero nunc consequat interdum varius sit.'
+    },
+    {
+        id: 'xcxcbdxfg',
+        firstName: 'Mike',
+        lastName: 'Jones',
+        images: [Male9],
+        age: 26,
+        location: 'Carroll, Brooklyn',
+        headline: ` Auctor eu augue ut lectus.`,
+        about: 'Ullamcorper malesuada proin libero nunc consequat interdum varius sit.'
+    },
+    {
+        id: 'xcxcbdxfg',
+        firstName: 'Danny',
+        lastName: 'Mann',
+        images: [Male10],
+        age: 26,
+        location: 'Carroll, Brooklyn',
+        headline: ` Auctor eu augue ut lectus.`,
+        about: 'Ullamcorper malesuada proin libero nunc consequat interdum varius sit.'
+    },
+    {
+        id: 'xcxcbdxfg',
+        firstName: 'Dave',
+        lastName: 'Davidson',
+        images: [Male11],
+        age: 26,
+        location: 'Carroll, Brooklyn',
+        headline: ` Auctor eu augue ut lectus.`,
+        about: 'Ullamcorper malesuada proin libero nunc consequat interdum varius sit.'
+    },
+    {
+        id: 'xcxcbdxfg',
+        firstName: 'Adi',
+        lastName: 'Guy',
+        images: [Male12],
+        age: 26,
+        location: 'Carroll, Brooklyn',
+        headline: ` Auctor eu augue ut lectus.`,
+        about: 'Ullamcorper malesuada proin libero nunc consequat interdum varius sit.'
+    },
+    {
+        id: 'xcxcbdxfg',
+        firstName: 'Blair',
+        lastName: 'McLure',
+        images: [Male13],
+        age: 26,
+        location: 'Carroll, Brooklyn',
+        headline: ` Auctor eu augue ut lectus.`,
+        about: 'Ullamcorper malesuada proin libero nunc consequat interdum varius sit.'
+    },
+    {
+        id: 'xcxcbdxfg',
+        firstName: 'John',
+        lastName: 'Madison',
+        images: [Male14],
+        age: 26,
+        location: 'Carroll, Brooklyn',
+        headline: ` Auctor eu augue ut lectus.`,
+        about: 'Ullamcorper malesuada proin libero nunc consequat interdum varius sit.'
+    },
+
 ]
 
 

@@ -92,7 +92,7 @@ const styles = {
         justifyContent: 'center', alignItems: 'center',
     },
     footerContainer: {
-        position: 'fixed', top: 0, zIndex: 1,
+        position: 'absolute', bottom: 0, zIndex: 1,
         width: 375, backgroundColor: 'rgba(255, 53, 114, 0.32',         
         display: 'flex', justifyContent: 'center', alignItems: 'center', 
         padding: '12px 0px', 
