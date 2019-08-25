@@ -251,8 +251,9 @@ const styles={
         left: 0, right: 0,     
         backgroundImage: `url('${Bokeh}')`,
         backgroundSize: 'cover',
-        minHeight: '100vh',
+        minHeight: '90vh',
         padding: 18,
+        overflowY: 'scroll',
     },
 
     button: {

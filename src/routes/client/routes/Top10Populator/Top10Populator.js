@@ -97,7 +97,7 @@ const styles = {
         display: 'flex', justifyContent: 'center', alignItems: 'center', 
         padding: '12px 0px', 
         borderRadius: '3px',
-        border: '1px solid rgba(0, 0, 0, 0.12)', 
+        border: '1px solid rgba(255,255,255, .12)',
     },
     footerText: {
         fontSize: '15px', fontWeight: 'bold', 

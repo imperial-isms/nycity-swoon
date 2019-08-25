@@ -14,16 +14,15 @@ class Top10Sorter extends Component {
     render() {                
         const { top10List, reOrderList } = this.props;
         return (
-            
+            <div style={styles.container}>
+            <div style={{...styles.headerContainer}}>
+                <p style={{...styles.headerText}}>
+                    Top 10
+                </p>
+            </div>
             <DragDropContext
                 onDragEnd={reOrderList}
-            >
-                <div style={styles.container}>
-                    <div style={{...styles.headerContainer}}>
-                        <p style={{...styles.headerText}}>
-                            Top 10
-                        </p>
-                    </div>
+            >                
                 <Droppable droppableId="attendeePool" type="attendee">
                     {(provided, snapshot) => (
                         <div
@@ -71,8 +70,9 @@ class Top10Sorter extends Component {
 
                     )}
                 </Droppable>
-                </div>
+                
             </DragDropContext>
+            </div>
         );
     }
 }
@@ -80,23 +80,19 @@ class Top10Sorter extends Component {
 const styles = {
     container: {
         backgroundColor: 'rgba(255,255,255, .12)',
-        maxWidth: 375, height: '100vh',
-        position: 'absolute', 
-        top: 0, bottom: 0,
-        left: 0, right: 0,
-        margin: 'auto', padding: 18,
-        display: 'flex', flexDirection: 'column',
-        justifyContent: 'flex-start',
-        overflowY: 'scroll',
+        maxWidth: 375,
+        // position: 'absolute',     
+        margin: 'auto',
+        padding: 18, paddingBottom: 18,    
     },
     headerContainer: {
-        width: '100%', 
+        width: '100%', minHeight: 32,
         backgroundColor: 'rgba(255,255,255, .12)',         
         display: 'flex', justifyContent: 'center', alignItems: 'center', 
         padding: '18px 0px', 
         marginBottom: '18px', 
         borderRadius: '3px',
-        border: '1px solid rgba(0, 0, 0, 0.12)', 
+        border: '1px solid rgba(255,255,255, .12)',
     },
     headerText: {
         fontSize: '36px', fontWeight: 'bold', 
