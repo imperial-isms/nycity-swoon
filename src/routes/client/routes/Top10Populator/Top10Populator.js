@@ -7,7 +7,7 @@ class Top10Populator extends Component {
 
     render() {        
         
-        const { spotsLeft, currentList, addToTop10, remove } = this.props;
+        const { spotsLeft, currentList, addToTop10 } = this.props;
         const htmlCards = [];
         if ( !currentList ) {return}
         
@@ -37,18 +37,17 @@ class Top10Populator extends Component {
                         </p>
                     </div>
                 {htmlCards.length !== 0 ? (                        
-                    <div>                        
-                        <Swipeable                                 
+                    <div style={{position: 'relative'}}>
+                        <Swipeable
                             onSwipe={(direction) => addToTop10(direction, currentList[0])}
-                            onAfterSwipe={ remove }
-                            buttons={
-                                ({left, right}) => (
-                                    <div style={{}}>
-                                        {/* <Button onClick={left}>Reject</Button>
-                                        <Button onClick={right}>Accept</Button> */}
-                                    </div>
-                                )
-                            }
+                            // buttons={
+                            //     ({left, right}) => (
+                            //         <div style={{}}>
+                            //             {/* <Button onClick={left}>Reject</Button>
+                            //             <Button onClick={right}>Accept</Button> */}
+                            //         </div>
+                            //     )
+                            // }
                         >
                             {htmlCards[0] ? htmlCards[0] : null}
                         </Swipeable>
@@ -63,10 +62,11 @@ class Top10Populator extends Component {
                                 headline={currentList[1]['headline']}
                                 about={currentList[1]['about']}
                                 style={{
-                                    position: 'absolute',
+                                    position: 'absolute',                                    
                                     top: 0, bottom: 0,
                                     left: 0, right: 0,
-                                    margin: 'auto', zIndex: -1
+                                    margin: 'auto', zIndex: -1,
+                                    transform: 'rotate(-1deg)'
                                 }}
                             /> 
                             : <div/>
@@ -84,7 +84,6 @@ class Top10Populator extends Component {
 
 const styles = {
     container: {
-        width: 375, height: 812,
         position: 'fixed', 
         top: 0, bottom: 0,
         left: 0, right: 0,
@@ -93,12 +92,12 @@ const styles = {
         justifyContent: 'center', alignItems: 'center',
     },
     footerContainer: {
-        position: 'fixed', bottom: 0, zIndex: 1,
-        width: 375, backgroundColor: 'rgba(255,255,255, .12)',         
+        position: 'absolute', bottom: 0, zIndex: 1,
+        width: 375, backgroundColor: 'rgba(255, 53, 114, 0.32',         
         display: 'flex', justifyContent: 'center', alignItems: 'center', 
         padding: '12px 0px', 
         borderRadius: '3px',
-        border: '1px solid rgba(0, 0, 0, 0.12)', 
+        border: '1px solid rgba(255,255,255, .12)',
     },
     footerText: {
         fontSize: '15px', fontWeight: 'bold', 

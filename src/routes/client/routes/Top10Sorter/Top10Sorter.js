@@ -6,34 +6,23 @@ class Top10Sorter extends Component {
     constructor(props) {
         super(props)
         this.state= {
-            top10: []
+
         }
     }
-    onDragEnd = (dragResult) => {
-        console.log(dragResult)
-        if (dragResult.destination === null) { return }
 
-        const top10List = this.props.top10List;
-        const { source, destination } = dragResult;
-
-        top10List.splice(destination.index,0,top10List.splice(source.index,1)[0])
-
-
-    }
 
     render() {                
-        const { top10List } = this.props;
+        const { top10List, reOrderList } = this.props;
         return (
-            
+            <div style={styles.container}>
+            <div style={{...styles.headerContainer}}>
+                <p style={{...styles.headerText}}>
+                    Top 10
+                </p>
+            </div>
             <DragDropContext
-                onDragEnd={this.onDragEnd}
-            >
-                <div style={styles.container}>
-                    <div style={{...styles.headerContainer}}>
-                        <p style={{...styles.headerText}}>
-                            Top 10
-                        </p>
-                    </div>
+                onDragEnd={reOrderList}
+            >                
                 <Droppable droppableId="attendeePool" type="attendee">
                     {(provided, snapshot) => (
                         <div
@@ -81,8 +70,9 @@ class Top10Sorter extends Component {
 
                     )}
                 </Droppable>
-                </div>
+                
             </DragDropContext>
+            </div>
         );
     }
 }
@@ -90,21 +80,19 @@ class Top10Sorter extends Component {
 const styles = {
     container: {
         backgroundColor: 'rgba(255,255,255, .12)',
-        width: 375, height: '90vh',
-        position: 'fixed', 
-        top: 0, bottom: 0,
-        left: 0, right: 0,
-        margin: 'auto', padding: 18,
-        display: 'flex', flexDirection: 'column',
-        overflowY: 'scroll',        
+        maxWidth: 375,
+        // position: 'absolute',     
+        margin: 'auto',
+        padding: 18, paddingBottom: 18,    
     },
     headerContainer: {
-        width: '100%', backgroundColor: 'rgba(255,255,255, .12)',         
+        width: '100%', minHeight: 32,
+        backgroundColor: 'rgba(255,255,255, .12)',         
         display: 'flex', justifyContent: 'center', alignItems: 'center', 
-        padding: '21px 0px', 
+        padding: '18px 0px', 
         marginBottom: '18px', 
         borderRadius: '3px',
-        border: '1px solid rgba(0, 0, 0, 0.12)', 
+        border: '1px solid rgba(255,255,255, .12)',
     },
     headerText: {
         fontSize: '36px', fontWeight: 'bold', 
